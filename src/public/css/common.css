@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    height: 10%;
+    text-align: center;
+}
+
+.header__ttl {
+    color: #8B7969;
+    margin-top: 0;
+    padding: 15px;
+    font-size: 40px;
+    font-family: "Alice", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    height: 90%;
+}
+
+

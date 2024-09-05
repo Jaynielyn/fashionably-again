@@ -1,0 +1,24 @@
+.top {
+    text-align: center;
+}
+
+.contact__ttl {
+    font-size: 40px;
+    font-family: "Alice", serif;
+    font-weight: lighter;
+    color: #8b7969;
+}
+
+/* 記入欄 */
+.contact__inner {
+    text-align: center;
+}
+
+.contact__form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form__label {
+    text-align: left;
+}
