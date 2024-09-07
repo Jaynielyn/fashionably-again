@@ -49,7 +49,7 @@ class ContactController extends Controller
 
             $request['gender'] = 3;
         }
-        
+
         Contact::create(
             $request->only([
                 'category_id',
@@ -66,4 +66,10 @@ class ContactController extends Controller
 
         return view('thanks');
     }
+
+    public function admin()
+    {
+        return view('admin');
+    }
+
 }

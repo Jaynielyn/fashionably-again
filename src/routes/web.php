@@ -17,3 +17,7 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [ContactController::class, 'admin']);
+});

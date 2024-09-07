@@ -43,7 +43,7 @@
 
         <div class="contact__form tell__group">
             <label class="form__label tell__label">
-                電話線号<span class="red">※</span>
+                電話番号<span class="red">※</span>
             </label>
             <div class="form__inputs">
                 <input class="contact__input tell_input" type="tel" name="tel_1" id="tel">

@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1 class="header__ttl">FashionablyLate</h1>
+        @yield('link')
     </header>
 
     <main>
