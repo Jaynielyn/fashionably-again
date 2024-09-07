@@ -17,62 +17,62 @@
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">お名前</th>
                 <td class="confirm_td name__td">
-                    <input type="text" name="first_name" class="first-name" value="{{ $contact['first_name'] }}" readonly />
-                    <input type="text" name="last_name" class="last-name" value="{{ $contact['last_name'] }}" readonly />
+                    {{ $contacts['first_name'] }}&nbsp;{{ $contacts['last_name'] }}
                 </td>
+                <input type="hidden" name="first_name" class="first_name" value="{{ $contacts['first_name'] }}" readonly />
+                <input type="hidden" name="last_name" class="last_name" value="{{ $contacts['last_name'] }}" readonly />
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th gender__th">性別</th>
                 <td class="confirm_td gender__td">
-                    <input class="gender" type="text" name="gender" value="{{ $contact['gender'] }}" readonly />
+                    <input class="gender" type="hidden" name="gender" value="{{ $contacts['gender'] }}">
                 </td>
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">メールアドレス</th>
                 <td class="confirm_td name__td">
-                    <input class="email" type="email" name="email" value="{{ $contact['email'] }}" readonly />
+                    {{ $contacts['email'] }}
                 </td>
+                <input class="email" type="hidden" name="email" value="{{ $contacts['email'] }}">
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">電話番号</th>
                 <td class="confirm_td name__td">
-                    <input class="tel" type="tel" name="tel_1" value="{{ $contact['tel_1'] }}" readonly />
+                    {{ $contacts['tel_1'] }}{{ $contacts['tel_2'] }}{{ $contacts['tel_3'] }}
                 </td>
-                <td class="confirm_td name__td">
-                    <input class="tel" type="tel" name="tel_2" value="{{ $contact['tel_1'] }}" readonly />
-                </td>
-                <td class="confirm_td name__td">
-                    <input class="tel" type="tel" name="tel_3" value="{{ $contact['tel_1'] }}" readonly />
-                </td>
-            </tr>
+                <input type="hidden" name="tel_1" value="{{ $contacts['tel_1'] }}">
+                <input type="hidden" name="tel_2" value="{{ $contacts['tel_2'] }}">
+                <input type="hidden" name="tel_3" value="{{ $contacts['tel_3'] }}">
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">住所</th>
                 <td class="confirm_td name__td">
-                    <input class="address" type="text" name="address" value="{{ $contact['address'] }}" readonly />
+                    {{ $contacts['address'] }}
                 </td>
+                <input class="address" type="hidden" name="address" value="{{ $contacts['address'] }}">
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">建物名</th>
                 <td class="confirm_td name__td">
-                    <input class="building" type="text" name="building" value="{{ $contact['building'] }}" readonly />
+                    {{ $contacts['building'] }}
                 </td>
+                <input class="building" type="hidden" name="building" value="{{ $contacts['building'] }}">
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">お問い合わせの種類</th>
-                <td class="confirm_td name__td">
-                    <input class="select" type="text" name="select" value="{{ $contact['select'] }}" readonly />
-                </td>
+                <td class="confirm_td name__td">{{ $category->content }}</td>
+                <input class="select" type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
             </tr>
             <tr class="confirm__tr name__tr">
                 <th class="confirm__th name__th">お問い合わせ内容</th>
                 <td class="confirm_td name__td">
-                    <input class="detail" type="text" name="detail" value="{{ $contact['detail'] }}" readonly />
+                    {{ $contacts['detail'] }}
                 </td>
+                <input class="detail" type="hidden" name="detail" value="{{ $contacts['detail'] }}">
             </tr>
         </table>
         <div class="buttons">
             <input class="confirm__btn" type="submit">
-            <a class="confirm__edit">
+            <input class="edit__btn" type="submit" name="back" value="修正">
         </div>
     </form>
 </div>

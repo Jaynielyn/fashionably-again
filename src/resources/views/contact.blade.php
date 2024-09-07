@@ -46,7 +46,7 @@
                 電話線号<span class="red">※</span>
             </label>
             <div class="form__inputs">
-                <input class="contact__input tell_input" type="tel" name="tel_1">
+                <input class="contact__input tell_input" type="tel" name="tel_1" id="tel">
                 <input class="contact__input tell_input" type="tel" name="tel_2">
                 <input class="contact__input tell_input" type="tel" name="tel_3">
             </div>
@@ -57,7 +57,7 @@
                 住所<span class="red">※</span>
             </label>
             <div class="form__inputs">
-                <input class="contact__input address" type="text" name="address" value="{{ old('address') }}" placeholder="例:東京都渋谷区千駄々谷1-2-3">
+                <input class="contact__input address" type="text" name="address" id="address" value="{{ old('address') }}" placeholder="例:東京都渋谷区千駄々谷1-2-3">
             </div>
         </div>
 
@@ -66,7 +66,7 @@
                 建物名
             </label>
             <div class="form__inputs">
-                <input class="contact__input building" type="text" name="building" value="{{ old('building') }}" placeholder="例:千駄々谷マンション101">
+                <input class="contact__input building" type="text" name="building" id="building" value="{{ old('building') }}" placeholder="例:千駄々谷マンション101">
             </div>
         </div>
 
@@ -75,10 +75,11 @@
                 お問い合わせの種類<span class="red">※</span>
             </label>
             <div class="form__inputs">
-                <select class="contact__select" name="select">
+                <select class="contact__select" name="category_id" id="">
                     <option class="select__option" disabled selected>選択してください</option>
-                    <option class="select__option" value="商品の交換について">商品の交換について</option>
-                    <option class="select__option" value="商品の返品について">商品の返品について</option>
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}" id="select">{{ $category->content }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -87,7 +88,7 @@
             <label class="form__label detail">
                 お問い合わせ内容<span class="red">※</span>
             </label>
-            <textarea class="form__inputs contact__form-detail" name="detail" cols="30" rows="10" placeholder="お問い合わせ内容をご記載ください">
+            <textarea class="form__inputs contact__form-detail" name="detail" id="" placeholder="お問い合わせ内容をご記載ください">
             </textarea>
         </div>
 
